@@ -8,7 +8,7 @@ it is possible to avoid issues about clock synchronizations among multiple machi
 So, this app is useful for testing a simple network function's (or a given service chain) 
 delay to which this application is connected via two interfaces.
 
-#Why and when to use?
+## Why and when to use?
 If the path from the measuring machine to the network function (or service chain) 
 and the path from the network function (or service chain) to the measuring machine is the same, 
 then the results are not going to be different than dividing the RTT with 2.
@@ -16,24 +16,25 @@ However,even if this is the case, this application ease your way to getting that
 no higher level settings (such as IP addresses) are needed, end the used interfaces do not need
 to be separated in different networking namespaces.
 
-+--------+    +---------+
-|end2end |----| Network |
-|delay   |    | func. or|
-|meas.   |----| ser.cha.|
-+--------+    +---------+
+   +--------+    +---------+
+   |end2end |----| Network |
+   |delay   |    | func. or|
+   |meas.   |----| ser.cha.|
+   +--------+    +---------+
 
 
 
 On the other hand, if the above-mentioned paths are not equal, then RTT/2 may not result in the
 exact delay.
-+--------+    +---------+      +---+       +-----+
-|end2end |----| Network |------|   |       | VNF |
-|delay   |    | func.   |      |   | . . . |     |---+
-|meas.   |    |         |      |   |       +-----+   |
-+--------+    +---------+      +---+                 |
-    |                                                |
-    |                                                |
-    +------------------------------------------------+
+
+   +--------+    +---------+      +---+       +-----+
+   |end2end |----| Network |------|   |       | VNF |
+   |delay   |    | func.   |      |   | . . . |     |---+
+   |meas.   |    |         |      |   |       +-----+   |
+   +--------+    +---------+      +---+                 |
+       |                                                |
+       |                                                |
+       +------------------------------------------------+
 
 
 #Note
