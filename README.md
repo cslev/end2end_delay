@@ -25,7 +25,7 @@ exact delay.
 In a real-time OS, this application probably works more precise
 
 #USAGE:
-$ sudo start.sh <iface_sender> <iface_reciever>
+$ sudo start.sh iface_sender iface_reciever
 
 Do not run end2end_delay.py manually, start.sh does the job for you.
 
@@ -36,11 +36,11 @@ in two xterms!
 If you have no GUI/display manager, then modify start.sh accordingly, or set up your interfaces
 manually, first start the reciever side:
 
-$ sudo python end2end_delay server <iface>
+$ sudo python end2end_delay server iface
 
 Then, on another terminal, start the sender side:
 
-$ sudo python end2end_delay client <iface2>
+$ sudo python end2end_delay client iface2
 
 
 
