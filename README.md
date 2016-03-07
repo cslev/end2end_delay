@@ -16,26 +16,9 @@ However,even if this is the case, this application ease your way to getting that
 no higher level settings (such as IP addresses) are needed, end the used interfaces do not need
 to be separated in different networking namespaces.
 
-#
-   +--------+    +---------+
-   |end2end |----| Network |
-   |delay   |    | func. or|
-   |meas.   |----| ser.cha.|
-   +--------+    +---------+
-
-
 
 On the other hand, if the above-mentioned paths are not equal, then RTT/2 may not result in the
 exact delay.
-
-   +--------+    +---------+      +---+       +-----+
-   |end2end |----| Network |------|   |       | VNF |
-   |delay   |    | func.   |      |   | . . . |     |---+
-   |meas.   |    |         |      |   |       +-----+   |
-   +--------+    +---------+      +---+                 |
-       |                                                |
-       |                                                |
-       +------------------------------------------------+
 
 
 #Note
@@ -45,12 +28,18 @@ In a real-time OS, this application probably works more precise
 $ sudo start.sh <iface_sender> <iface_reciever>
 
 Do not run end2end_delay.py manually, start.sh does the job for you.
+
 It will bring up the interfaces in promiscuous mode, and the measurement then will be started
 in two xterms!
+
+
 If you have no GUI/display manager, then modify start.sh accordingly, or set up your interfaces
 manually, first start the reciever side:
+
 $ sudo python end2end_delay server <iface>
+
 Then, on another terminal, start the sender side:
+
 $ sudo python end2end_delay client <iface2>
 
 
