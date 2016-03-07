@@ -1,0 +1,7 @@
+#Since packets are sent in each second, define here how many packets wanted 
+#to be sent and considered in calculating delay
+duration=10
+
+#The first packet(s) always in flight for more time, so define here
+#how many of them should be omitted and treated as warm-up packets
+warm_up_packets=2
